@@ -10,7 +10,6 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class MyServiceProvider {
   
-
   constructor(public http: HttpClient) {
   }
 
@@ -33,9 +32,13 @@ Successfully write a unit test for myFavoriteBand(), mocking out the http call.
 Level 3 (Take Tariq's personal money in a DISRESPECTFUL mannor)
 */
 
-myFavoriteBand(){
-
+myFavoriteBand(id: number) {
+  return this.http.get(`http://replace.with.api/anything/${id}`);
 }
+newBandILIke(value: any){
+return this.http.post(`http://replace.with.api/anything`,value);
+}
+
 /*
 In the same service have a public funtion called newBandILIke(value) , that accepts a String as a parameter, and calls a post endpoint.
 Succesfully write a unit test for newBandILIke(value) and mock out the http call.*/
